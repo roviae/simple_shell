@@ -24,7 +24,7 @@ void exec_cmd(char **args)
 				i++;
 			}
 		}
-		else if (execve(args[0], args, environ) == -1)
+		else if (execve(args[0], args, NULL) == -1)
 		{
 			perror(args[0]);
 			_exit(1);
