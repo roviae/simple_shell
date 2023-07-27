@@ -7,9 +7,9 @@
  *
  * Return: number of args parsed
  */
-int parse-agrs(char *buff, char **args)
+int parse_args(char *buff, char **args)
 {
-	char *token = strtok(buff, char **args)
+	char *token = strtok(buff," \t\n");
 		int argc = 0;
 
 	while (token != NULL)
