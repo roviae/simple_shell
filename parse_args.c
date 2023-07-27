@@ -9,14 +9,18 @@
 int parse_args(char *buff, char **args)
 {
 	char *token = strtok(buff, " \t\n");
-	int argc = 0;
+	int argc = 0, i = 0;
 
-	if (strcmp(args[0], "exit") == 0)
-	{
-		_exit(1);
-	}
 	while (token != NULL)
 	{
+		if (strcmp(args[0], "env") == 0)
+		{
+			while (environ[i] != NULL)
+			{
+				printf("%s\n", environ[i]);
+				i++;
+			}
+		}
 		args[argc] = token;
 		token = strtok(NULL, " \t\n");
 		argc++;

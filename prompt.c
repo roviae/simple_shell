@@ -5,6 +5,9 @@
 */
 void prompt(void)
 {
-	printf(">>> ");
-	fflush(stdout);
+	if (isatty(fileno(stdin)))
+	{
+		printf(">>> ");
+		fflush(stdout);
+	}
 }

@@ -9,9 +9,9 @@ void run_shell(void)
 	size_t n = 0;
 	ssize_t bytes_read;
 	char *args[SIZE];
-	int argc;
+	int argc, status = 1;
 
-	while (1)
+	while (status)
 	{
 		prompt();
 		bytes_read = getline(&buff, &n, stdin);
